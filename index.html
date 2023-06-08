@@ -29,7 +29,7 @@
     <header class="white-text-container section-container">
       <div class="text-center">
         <h1>I am Abhijith M R</h1>
-        <p>Web designer</p>
+        <p>Python-Django</p>
         <p>
           <a class="fa-icon fa-icon-2x" href="https://facebook.com/" title="">
             <i class="fa fa-instagram"></i>
@@ -157,6 +157,18 @@
                   LeetCode is an online platform that provides coding challenges and algorithm problems to help
                   programmers improve their problem-solving skills and prepare for technical interviews</p>
               </div>
+
+              <div class="work-experience">
+                <!-- <small class="date">2017-2015</small> -->
+                <h3 class="h5 date-title"><a href="https://leetcode.com/problemset/all/" title="">ChatGTP</a>
+                </h3>
+
+                <p>
+                  ChatGPT is a smart computer program that can talk like a person and help you with things using words.
+                  It's built by a clever company called OpenAI and can do lots of different tasks when you chat with it.
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
@@ -290,24 +302,26 @@
     <div class="card">
       <div class="card-block">
         <h2>Contact</h2>
-        <form id="form" action="#" class="reveal-content" role="form" method="">
-          <div class="form-group">
-            <input type="Name" class="form-control" id="name" name="name" placeholder="Name">
+        <form id="form" class="reveal-content">
+          <div class="form-group contact-me-form">
+            <input type="Name" class="form-control " id="formname" name="name" placeholder="Name">
+            <span id="spanName" class="contact-me-form-design"></span>
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" id="email" name="mobilenumber" placeholder="Email">
+            <input type="text" class="form-control" id="formemail" name="email" placeholder="Email">
+            <span id="spanEmail" class="contact-me-form-design"></span>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="subject" name="email" placeholder="Subject">
+            <input type="text" class="form-control" id="formsubject" name="subject" placeholder="Subject">
+            <span id="spanSubject" class="contact-me-form-design"></span>
           </div>
           <div class="form-group">
-            <textarea class="form-control" rows="5" name="message" placeholder="Enter your message"></textarea>
+            <textarea class="form-control" rows="5" id="formMessage" name="message" placeholder="Enter your message"></textarea>
+            <span id="spanMessage" class="contact-me-form-design"></span>
           </div>
           <div class="form-group">
-            <button type="submit" class=" btn btn-primary" onclick="validateForm()">Send message</button>
+            <button type="submit" class=" btn btn-primary">Send message</button>
             <div class="errmsg">
-              <span id="msg1"></span>
-              <span id="msg"></span>
             </div>
           </div>
         </form>
@@ -353,32 +367,6 @@
     });
   </script>
 
-  <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbz4Q-iomr6dahoAQWVCvy7UQDjOJAUjThJFrnjb6XK-1anYHn58y4ey_NfT2ZfRxqQC0g/exec'
-    const form = document.getElementById("form")
-    const msg = document.getElementById("msg")
-
-    function validateForm(){
-      return true;
-    }
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      if (validateForm()) {
-        alert("Hello atleast reached here")
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then(response => {
-            msg.innerHTML = "Sent Successfully"
-            alert("Sent Successfully")
-            setTimeout(function () {
-              msg.innerHTML = ""
-            }, 5000)
-            form.reset()
-          })
-          .catch(error => console.error('Error!', error.message))
-      }
-    })
-  </script>
-
 
 
 
@@ -397,6 +385,7 @@
 
 
   <script type="text/javascript" src="./main.bc58148c.js"></script>
+  <script type="text/javascript" src="validation.js"></script>
 </body>
 
 </html>
